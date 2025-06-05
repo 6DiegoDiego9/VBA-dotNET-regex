@@ -60,7 +60,7 @@ Public Sub SimpleMatchExample()
 End Sub
 ```
 
-## API Overview
+## Library Overview
 
 - **`CLRRegex`**: The main class.
   - `.InitializeRegex(Pattern, [Options])`: Creates the regex object.
