@@ -23,13 +23,13 @@ This library aims to provide a complete wrapper around the System.Text.RegularEx
 *   Windows OS
 *   Microsoft Office 32-bit or 64-bit
 *   .NET Framework 4.0 or later (most Windows systems have this pre-installed)
-*   vb2clr (https://github.com/jet2jet/vb2clr)
 
 ## Installation
 
 **Manual Method**
    - In your VBA project, import all the `.cls` and `.bas` files from the root directory of this repository.
-   - import the files CLRHost.cls and ExitHandler.bas from the vb2clr library (https://github.com/jet2jet/vb2clr)
+   - import the files CLRHost.cls and ExitHandler.bas from the vb2clr library (https://github.com/jet2jet/vb2clr) by @jet2jet
+   - Add the Type Library reference 'Common Runtime Language Execution Engine' and 'mscorlib.dll'
 
 ## Quick Start
 
