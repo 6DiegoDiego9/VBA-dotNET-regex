@@ -1,4 +1,4 @@
-**VBA-dotNET-regex**
+# VBA-dotNET-regex
 
 A powerful, high-performance, VBA library that leverages .NET's System.Text.RegularExpressions through CLR integration, providing advanced regex features not available in VBScript.RegExp.
 
@@ -21,21 +21,15 @@ This library aim to provide a complete wrapper around the `System.Text.RegularEx
 ## Requirements
 
 *   Windows OS
-*   Microsoft Office 32-bit or 64-bit (The library uses `PtrSafe` declarations for 64-bit compatibility).
-*   .NET Framework 4.0 or later (most Windows systems have this pre-installed).
+*   Microsoft Office 32-bit or 64-bit
+*   .NET Framework 4.0 or later (most Windows systems have this pre-installed)
+*   vb2clr (https://github.com/jet2jet/vb2clr)
 
 ## Installation
 
-You have two options for installation:
-
-**1. Easy Method (Recommended)**
-   - Go to the [**Releases**](https://github.com/YourUsername/VBA-CLR-Regex/releases) page.
-   - Download the latest `CLRRegex.xlsm` file.
-   - Open the file and run the tests in the `CLRRegexTest` module to see it in action.
-
-**2. Manual Method**
-   - In your VBA project, import all the `.cls` and `.bas` files from the `/src` directory of this repository.
-   - **Important:** Ensure you import them in an order that resolves dependencies, or simply compile the project (`Debug -> Compile VBAProject`) after importing to check for errors.
+**Manual Method**
+   - In your VBA project, import all the `.cls` and `.bas` files from the root directory of this repository.
+   - import the files CLRHost.cls and ExitHandler.bas from the vb2clr library (https://github.com/jet2jet/vb2clr)
 
 ## Quick Start
 
