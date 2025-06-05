@@ -1,6 +1,6 @@
 # VBA-dotNET-regex 0.1 alpha
 
-A powerful, high-performance, zero dependencies VBA library that leverages [.NET's System.Text.RegularExpressions](https://learn.microsoft.com/en-us/dotnet/standard/base-types/regular-expressions) through CLR integration.
+A powerful, high-performance, <ins>zero dependencies</ins> VBA library that leverages [.NET's System.Text.RegularExpressions](https://learn.microsoft.com/en-us/dotnet/standard/base-types/regular-expressions) through CLR integration.
 
 This library aims to provide a complete wrapper around the System.Text.RegularExpressions namespace, bringing modern regex capabilities directly into Excel, Access, and other VBA environments, providing VBA with advanced regex features not available in VBScript.RegExp.
 
