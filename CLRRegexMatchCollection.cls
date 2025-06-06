@@ -85,7 +85,7 @@ Public Function Item(ByVal idx As Long) As CLRRegexMatch ' idx is 0-based
 End Function
 
 'Attribute NewEnum.VB_UserMemId = -4
-Public Function NewEnum() As IUnknown
+Public Property Get NewEnum() As IUnknown
 Attribute NewEnum.VB_UserMemId = -4
     ' Ensure the cache is fully populated before allowing enumeration
     ' This is crucial for For Each loops to work correctly.
@@ -102,7 +102,7 @@ Attribute NewEnum.VB_UserMemId = -4
     ' If m_matchCache is empty (e.g., due to initialization failure or no matches),
     ' this will correctly return an enumerator that yields no items.
     Set NewEnum = m_matchCache.[_NewEnum]
-End Function
+End Property
 
 Private Sub Class_Terminate()
     Set m_cobjMatchCollection = Nothing

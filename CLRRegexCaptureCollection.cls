@@ -82,7 +82,7 @@ Public Function Item(ByVal idx As Long) As CLRRegexCapture ' idx is 0-based
 End Function
 
 'Attribute NewEnum.VB_UserMemId = -4
-Public Function NewEnum() As IUnknown
+Public Property Get NewEnum() As IUnknown
 Attribute NewEnum.VB_UserMemId = -4
     If m_isInitialized And m_captureCache.Count <> m_countCache And m_countCache > 0 Then
         Dim i As Long
@@ -92,7 +92,7 @@ Attribute NewEnum.VB_UserMemId = -4
         Next i
     End If
     Set NewEnum = m_captureCache.[_NewEnum]
-End Function
+End Property
 
 Private Sub Class_Terminate()
     Set m_cobjCaptureCollection = Nothing

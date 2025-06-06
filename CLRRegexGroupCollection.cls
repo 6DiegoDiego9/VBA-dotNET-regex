@@ -90,7 +90,7 @@ Public Function Item(ByVal Key As Variant) As CLRRegexGroup
 End Function
 
 'Attribute NewEnum.VB_UserMemId = -4
-Public Function NewEnum() As IUnknown
+Public Property Get NewEnum() As IUnknown
 Attribute NewEnum.VB_UserMemId = -4
     If m_isInitialized And m_groupCache.Count <> m_countCache And m_countCache > 0 Then
         Dim i As Long
@@ -100,7 +100,7 @@ Attribute NewEnum.VB_UserMemId = -4
         Next i
     End If
     Set NewEnum = m_groupCache.[_NewEnum]
-End Function
+End Property
 
 Private Sub Class_Terminate()
     Set m_cobjGroupCollection = Nothing
