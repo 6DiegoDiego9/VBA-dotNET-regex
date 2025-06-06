@@ -421,13 +421,13 @@ Public Sub RunCLRRegexTests()
     Debug.Print vbCrLf & "--- Test 17: Performance Comparison ---"
     
     Dim iterations As Long
-    iterations = 1
+    iterations = 100
     
     testPattern = "\b([a-z0-9]+)\s*=\s*([0-9.]+)\b" ' e.g., "value = 123.45"
     Dim originalTextToSearch As String
     originalTextToSearch = "val1=100, val2 = 200.5, val3= 300, val4=400. This is a moderately long string to search through for key-value pairs. val5=500, val6 = 600.9, val7=700, val8=800"
     Dim sizeMultiplier As Long
-    sizeMultiplier = 10000
+    sizeMultiplier = 100
     textToSearch = "" ' Initialize
     For i = 1 To sizeMultiplier
         textToSearch = textToSearch & originalTextToSearch & " " ' Add a space to separate repetitions
@@ -544,7 +544,6 @@ Public Sub RunCLRRegexTests()
     Debug.Print "vb2net (Compiled) (" & matchCount & " matches) x " & iterations & " iterations: " & format$(vb2netTime, "0.0000") & " seconds."
     Set regex = Nothing
     
-    
     ' --- StaticRegexSingle (VBA-Native) Test ---
     Dim staticRegexObj As StaticRegexSingle.RegexTy
     Dim staticMatcher As StaticRegexSingle.MatcherStateTy
@@ -568,7 +567,6 @@ Public Sub RunCLRRegexTests()
     
     staticTime = (endTime - startTime) / freq
     Debug.Print "StaticRegexSingle (" & staticMatchCount & " matches) x " & iterations & " iterations: " & format$(staticTime, "0.0000") & " seconds."
-
     
     ' --- Performance Summary ---
     Debug.Print ""
@@ -608,4 +606,28 @@ Public Sub RunCLRRegexTests()
         End If
         Debug.Print "  StaticRegexSingle: " & format$(staticTime / minTime, "0.00") & "x"
     End If
+End Sub
+
+
+Public Sub SimpleMatchExample()
+    Dim rgx As New clrRegex
+    Dim textToSearch As String
+    Dim allMatches As CLRRegexMatchCollection
+    Dim aMatch As CLRRegexMatch
+
+    ' The .NET regex supports named groups 'key' and 'value'
+    Call rgx.InitializeRegex("(?<key>\w+)\s*=\s*(?<value>\d+)")
+
+    textToSearch = "item1 = 100, item2 = 200, invalid_item, item3 = 300"
+
+    Set allMatches = rgx.Matches(textToSearch)
+
+    Debug.Print "Found " & allMatches.Count & " matches."
+
+    For Each aMatch In allMatches
+        Debug.Print "--- Match Found ---"
+        Debug.Print "Full Match: " & aMatch.Value
+        Debug.Print "Key: " & aMatch.Groups.Item("key").Value
+        Debug.Print "Value: " & aMatch.Groups.Item("value").Value
+    Next aMatch
 End Sub
