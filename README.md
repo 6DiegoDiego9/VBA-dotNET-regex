@@ -13,7 +13,8 @@ This library aims to provide a complete wrapper around the System.Text.RegularEx
     *   Named Capture Groups (`(?<name>...)`)
     *   Atomic Grouping (`(?>...)`)
     *   Balancing Groups (`(?<Open-Close>...)`)
-    *   And much more!
+    *   Conditional Expressions (`(?(condition)yes|no)`)
+    *   And more!
 *   **High Performance:** Includes support for the `RegexOptions.Compiled` flag for maximum speed in repetitive tasks.
 *   **Complete Object Model:** Provides VBA-native wrapper classes for `Match`, `Group`, `Capture` and their collections, making the API intuitive to use.
 *   **Graceful Cleanup:** The hosted CLR is automatically unloaded when the application exits, preventing memory leaks.
